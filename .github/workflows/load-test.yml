@@ -7,7 +7,10 @@ jobs:
       - name: Step 1 - Checkout
         uses: actions/checkout@v5
 
-      - name: Step 2 - Run K6 Load Test
+      - name: Step 2 - Setup K6
+        uses: grafana/setup-k6-action@v1
+
+      - name: Step 3 - Run K6 Load Test
         uses: grafana/run-k6-action@v1
         with:
           path: |
