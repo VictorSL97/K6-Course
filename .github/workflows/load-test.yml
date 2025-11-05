@@ -10,4 +10,5 @@ jobs:
       - name: Step 2 - Run K6 Load Test
         uses: grafana/run-k6-action@v1
         with:
-          filename: scripts/tc1.js
+          path: |
+            ./scripts/tc1.js
