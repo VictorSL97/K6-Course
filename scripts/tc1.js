@@ -1,6 +1,7 @@
 // 1. Inicialização
 import http from 'k6/http';
 import { check, sleep } from 'k6';
+import { htmlReport } from 'https://raw.githubusercontent.com/benc-uk/k6-reporter/latest/dist/bundle.js'
 
 // 2. Configuração
 export const options = {
@@ -22,3 +23,8 @@ export default function(){
 }
 
 // 4. Desmontagem // Fase opcional
+export function handleSummary(data) {
+  return {
+    'index.html': htmlReport(data),
+  }
+}
