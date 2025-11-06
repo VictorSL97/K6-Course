@@ -18,16 +18,15 @@ jobs:
         with:
           path: ./scripts/tc1.js
 
-      - name: Step 4 - Create report folder
       - run: ls & mkdir report & mv index.html report
 
-      - name: Step 5 - Upload Artifacts
+      - name: Step 4 - Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: Performance Test Report
           path: ./report
 
-      - name: Step 6 - Publish Report
+      - name: Step 5 - Publish Report
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
